@@ -4,11 +4,7 @@ import requests as rq
 
 app = Flask(__name__)
 
-<<<<<<< Updated upstream
 @app.route('/', methods=['GET', 'POST'])
-=======
-@app.route('/TripPlanner')
->>>>>>> Stashed changes
 def calculate_emissions():
     if request.method == 'POST':
         api_key = 'fXEzJ1nKIxwyo9y2PBVAoQ'  # Replace with your Carbon Interface API key
