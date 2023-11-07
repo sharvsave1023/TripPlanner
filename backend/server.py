@@ -1,24 +1,23 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
 import pandas as pd
 import requests as rq
 
 app = Flask(__name__)
 
+api_key = 'fXEzJ1nKIxwyo9y2PBVAoQ'
+url = 'https://www.carboninterface.com/api/v1/estimates'
+
 @app.route('/', methods=['GET', 'POST'])
 def calculate_emissions():
     if request.method == 'POST':
-        api_key = 'fXEzJ1nKIxwyo9y2PBVAoQ'  # Replace with your Carbon Interface API key
-        url = 'https://www.carboninterface.com/api/v1/estimates'
-
         departure_airport1 = request.form['departure_airport1']
         destination_airport1 = request.form['destination_airport1']
-
         departure_airport2 = request.form['departure_airport2']
         destination_airport2 = request.form['destination_airport2']
 
         headers = {
             'Authorization': f'Bearer {api_key}',
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         }
 
         data = {
@@ -32,15 +31,14 @@ def calculate_emissions():
 
         response = rq.post(url, headers=headers, json=data)
         result = response.json()
-
         data = result['data']['attributes']
 
-        df = pd.DataFrame(data=[data])
+        df = pd.DataFrame(data=data)
 
-        carbon_emissions1 = df['carbon_g'][0]
-        carbon_emissions2 = df['carbon_g'][1]
+        carbon_emission_flight = df['carbon_g'][0]
+        carbon_emission_return = df['carbon_g'][1]
 
-        return render_template('result.html', carbon_emissions1=carbon_emissions1, carbon_emissions2=carbon_emissions2)
+        return render_template('index.html', carbon_emission_flight=carbon_emission_flight, carbon_emission_return=carbon_emission_return)
 
     return render_template('index.html')
 
