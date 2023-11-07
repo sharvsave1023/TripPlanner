@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def calculate_emissions():
     if request.method == 'POST':
-        api_key = 'YOUR_API_KEY'  # Replace with your Carbon Interface API key
+        api_key = 'fXEzJ1nKIxwyo9y2PBVAoQ'  # Replace with your Carbon Interface API key
         url = 'https://www.carboninterface.com/api/v1/estimates'
 
         departure_airport1 = request.form['departure_airport1']
