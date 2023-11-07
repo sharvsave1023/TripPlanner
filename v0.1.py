@@ -1,6 +1,5 @@
 import pandas as pd
 import requests as rq
-import _tkinter
 import PySimpleGUI as sg
 
 api_key = 'fXEzJ1nKIxwyo9y2PBVAoQ'
@@ -50,7 +49,7 @@ while True:
 
         df = pd.DataFrame(data=[data])
 
-        emissions_result = f"Carbon Emissions To Flight (Grams): {df['carbon_g'][0]}\n"
+        emissions_result = f"Carbon Emissions Outbound Flight (Grams): {df['carbon_g'][0]}\n"
         emissions_result += f"Carbon Emissions Return Flight (Grams): {df['carbon_g'][1]}"
         window['emissions_result'].update(emissions_result)
 
