@@ -1,1 +1,3 @@
-hi this is my website whats good
+hi this is my website whats good 
+https://hasthemes.com/blog/react-front-end-templates/ <- website for multiple templates we could use
+https://www.geeksforgeeks.org/how-to-use-reactjs-with-html-template/ <- website shows you how to implement the front end html template within react

@@ -4,7 +4,7 @@ Project currently in development for Alpha Kappa Psi, Mu Rho Chapter's Case Stud
 
 Written by Alpha Gamma Class CS Group
   Backend Developers: Sharv Save, Pratham Shah, Rithika Gantla
-  Frontend Developers: Nandini Paidisetty, Dev Sheth
+  Frontend Developers: Nandini Paidesetty, Dev Sheth
 
 Carbon Footprint Emisssions tracker (Flights)
 
