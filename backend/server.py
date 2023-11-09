@@ -4,8 +4,10 @@ import requests as rq
 
 from flask import Flask, abort, current_app, request, render_template
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 api_key = 'fXEzJ1nKIxwyo9y2PBVAoQ'
 url = 'https://www.carboninterface.com/api/v1/estimates'

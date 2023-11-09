@@ -3,6 +3,9 @@ import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
+import customMarkerIcon from '/Users/nandinipaidesetty/Documents/GitHub/TripPlanner/FrontEnd/src/Dev marker.png'; // Import your custom marker image
+
+
 const airportCoords = {
     'ADW': [38.810799, -76.866997], // Joint Base Andrews
     'ATL': [33.6367, -84.428101], // Hartsfield Jackson Atlanta International Airport
@@ -71,22 +74,32 @@ const airportCoords = {
 };
 
 const MapComponent = ({ departure, arrival }) => {
-  const departureCoords = airportCoords[departure];
-  const arrivalCoords = airportCoords[arrival];
-
-  return (
-    <MapContainer center={departureCoords} zoom={5} style={{ height: '400px', width: '100%' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {departureCoords && <Marker position={departureCoords}></Marker>}
-      {arrivalCoords && <Marker position={arrivalCoords}></Marker>}
-      {departureCoords && arrivalCoords && (
-        <Polyline positions={[departureCoords, arrivalCoords]} color="blue" />
-      )}
-    </MapContainer>
-  );
-};
-
-export default MapComponent;
+    const departureCoords = airportCoords[departure];
+    const arrivalCoords = airportCoords[arrival];
+  
+    // Define a custom icon for the markers
+    const customIcon = new L.Icon({
+      iconUrl: customMarkerIcon, // Use your custom marker image
+      iconSize: [30, 30], // Adjust the size as needed
+    });
+  
+    return (
+      <MapContainer center={departureCoords} zoom={5} style={{ height: '400px', width: '100%' }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {departureCoords && (
+          <Marker position={departureCoords} icon={customIcon}></Marker>
+        )}
+        {arrivalCoords && (
+          <Marker position={arrivalCoords} icon={customIcon}></Marker>
+        )}
+        {departureCoords && arrivalCoords && (
+          <Polyline positions={[departureCoords, arrivalCoords]} color="blue" />
+        )}
+      </MapContainer>
+    );
+  };
+  
+  export default MapComponent;
