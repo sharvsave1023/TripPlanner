@@ -9,4 +9,18 @@ Written by Alpha Gamma Class CS Group
 Carbon Footprint Emisssions tracker (Flights)
 
 11/01/2023
-v0: flight carbon emissions outputted as a result of round-trip user input
+v1: flight carbon emissions outputted as a result of round-trip user input.
+
+11/08/2023
+v2: fully functional frontend + backend project, connected framworks.
+
+
+Frontend Package Dependencies: 
+
+  Node.js: manages react functionality in order to run app through terminal
+  React.js: creates the framework to develop the frontend
+
+Backend Package Dependencies:
+
+  Flask: runs the server that the backend is hosted on
+  
