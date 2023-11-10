@@ -23,4 +23,5 @@ Frontend Package Dependencies:
 Backend Package Dependencies:
 
   Flask: runs the server that the backend is hosted on
+  Requests: sends the inquiry to the API to retrieve the data
   
