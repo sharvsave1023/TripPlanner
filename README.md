@@ -1,6 +1,6 @@
 # TripPlanner
 
-Project currently in development for Alpha Kappa Psi, Mu Rho Chapter's Case Study project.
+Alpha Kappa Psi, Mu Rho Chapter's Case Study project.
 
 Written by Alpha Gamma Class CS Group
   Backend Developers: Sharv Save, Pratham Shah, Rithika Gantla
